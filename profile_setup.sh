@@ -1,6 +1,3 @@
-# Let's go
-
-toilet -f mono12 SecBriQ
 
 # use yellow for directories
 export CLICOLOR=1
