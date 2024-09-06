@@ -7,6 +7,15 @@ export LSCOLORS=fxfxcxdxbxegedabagacad
 alias vz="vim ~/.zshrc"
 alias sz=" source ~/.zshrc; echo '~/.zshrc sourced'"
 
+# sublime
+
+alias subl="fzf | xargs subl"
+
+# vscode 
+
+alias code="fzf | xargs code"
+
+
 # Other alias
 alias grep='grep --color'
 alias ll="ls -lah"
