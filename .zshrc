@@ -10,7 +10,19 @@ alias subl="fzf | xargs subl"
 # quickly edit and source .zshrc
 
 alias vz="vim ~/Macbook/github/terminal-setup/.zshrc"
-alias sz=" source ~/Macbook/github/terminal-setup/.zshrc; echo '~/.zshrc sourced'"
+sz () {
+ source ~/Macbook/github/terminal-setup/.zshrc
+ echo '~/.zshrc sourced'
+ cd ~/Macbook/github/terminal-setup/
+ echo 'changed to git repo'
+ git add ./.zshrc
+ echo 'added zshrc file'
+ git commit -m 'upgraded terminalfile'
+ git push
+ echo 'pushed to github'
+}
+
+
 
 # Other alias
 
@@ -19,7 +31,7 @@ alias ll="eza -1 --icons -l -a --no-filesize --no-time -o --git-repos-no-status 
 alias lt="eza -1 --icons -l --no-filesize --no-time -o --git-repos-no-status --no-permissions -T --group-directories-first"
 alias gadd='git add .' 
 alias gcom='git commit -m' 
-alias gstat='git status'
+malias gstat='git status'
 alias gpush='git push'
 alias gpull='git pull' 
 alias v='vim'
