@@ -58,7 +58,7 @@ alias pubip="curl -s http://checkip.dyndns.org/ | sed 's/[a-zA-Z<>/ :]//g'"
 alias myip="ifconfig en0 | grep inet | grep -v inet6 | awk '{print \$2}'"
 
 
-
+# Not main config
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
