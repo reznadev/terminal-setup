@@ -2,9 +2,6 @@
 export CLICOLOR=1
 export LSCOLORS=fxfxcxdxbxegedabagacad
 
-# sublime
-
-alias subl="fzf | xargs subl" 
 
 
 # quickly edit and source .zshrc
@@ -63,3 +60,16 @@ alias myip="ifconfig en0 | grep inet | grep -v inet6 | awk '{print \$2}'"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# functions
+
+sub() {
+    # Search for both files and directories under $HOME
+    local target
+    target=$(find "$HOME" \( -type f -o -type d \) 2>/dev/null | fzf)
+    # If something is selected, open it with Sublime Text (using "command subl" to bypass any alias)
+    [ -n "$target" ] && command subl "$target"
+}
+
+
+
