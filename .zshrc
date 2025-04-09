@@ -33,6 +33,8 @@ alias gpush='git push'
 alias gpull='git pull' 
 alias v='vim'
 alias tf="terraform"
+alias z='zed'
+
 
 # Pretty print the PATH
 
