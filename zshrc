@@ -26,9 +26,9 @@ sz () {
 alias grep='grep --color'
 alias ll="eza -1 --icons -l -a --no-filesize --no-time -o --git-repos-no-status --no-permissions --colour=always"
 alias lt="eza -1 --icons -l --no-filesize --no-time -o --git-repos-no-status --no-permissions -T --group-directories-first"
-alias gadd='git add .'
-alias gcom='git commit -m'
-alias gstat='git status'
+alias ga='git add .'
+alias gc='git commit -m'
+alias gs='git status'
 alias gpush='git push'
 alias gpull='git pull'
 alias v='vim'
