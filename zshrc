@@ -34,7 +34,7 @@ alias gpull='git pull'
 alias v='vim'
 alias tf="terraform"
 alias z='zed'
-
+alias lsp='lsof -PiTCP -sTCP:LISTEN'
 
 # Pretty print the PATH
 
