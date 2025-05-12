@@ -46,6 +46,7 @@ sv() {
 
 # Other alias
 
+alias yazi='y'
 alias grep='grep --color'
 alias ll="eza -1 -g --icons -l -a --no-filesize --no-time -o --git-repos-no-status --no-permissions --colour=always"
 alias lt="eza -1 --icons -l --no-filesize --no-time -o --git-repos-no-status --no-permissions -T --group-directories-first"
