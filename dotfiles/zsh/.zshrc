@@ -2,6 +2,20 @@
 export CLICOLOR=1
 export LSCOLORS=fxfxcxdxbxegedabagacad
 
+# TUI File Manager
+
+function y() {
+  local tmp
+  tmp=$(mktemp -t "yazi-cwd.XXXXXX")
+  yazi "$@" --cwd-file="$tmp"
+  if [[ -s "$tmp" ]]; then
+    cd "$(cat "$tmp")"
+  fi
+  rm -f -- "$tmp"
+}
+
+export EDITOR=zed
+
 # Dotfiles root
 export DOTFILES="$HOME/Macbook/github/terminal-setup/dotfiles"
 
