@@ -14,7 +14,7 @@ function y() {
   rm -f -- "$tmp"
 }
 
-export EDITOR=sublime
+export EDITOR=subl
 
 # Dotfiles root
 export DOTFILES="$HOME/Macbook/github/terminal-setup/dotfiles"
