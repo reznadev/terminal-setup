@@ -12,7 +12,8 @@ if ! command -v stow &>/dev/null; then
 fi
 
 # 2) change to repo
-cd "$(dirname "$0")"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/dotfiles"
 
 # 3) add packages (configfiles you want to stow) here
 
