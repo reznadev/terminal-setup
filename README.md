@@ -1,3 +1,3 @@
 # terminal-setup
 
-zsh-shell profile for iterm2. 
+This is my minimalistic enviroment setup
