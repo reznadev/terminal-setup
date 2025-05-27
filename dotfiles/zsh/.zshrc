@@ -14,7 +14,7 @@ function y() {
   rm -f -- "$tmp"
 }
 
-export EDITOR=subl
+export EDITOR=code
 
 # Dotfiles root
 export DOTFILES="$HOME/github/terminal-setup/dotfiles"
@@ -72,7 +72,7 @@ alias gpush='git push'
 alias gpull='git pull'
 alias v='vim'
 alias tf="terraform"
-alias z='zed'
+alias c='code'
 alias lsp='lsof -PiTCP -sTCP:LISTEN'
 
 # Pretty print the PATH
