@@ -17,7 +17,7 @@ function y() {
 export EDITOR=subl
 
 # Dotfiles root
-export DOTFILES="$HOME/Macbook/github/terminal-setup/dotfiles"
+export DOTFILES="$HOME/github/terminal-setup/dotfiles"
 
 
 # STOW alias
