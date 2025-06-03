@@ -71,7 +71,7 @@ alias gb='git branch'
 alias gpush='git push'
 alias gpull='git pull'
 alias v='vim'
-alias tf="terraform"
+alias tf='terraform'
 alias c='code'
 alias lsp='lsof -PiTCP -sTCP:LISTEN'
 
