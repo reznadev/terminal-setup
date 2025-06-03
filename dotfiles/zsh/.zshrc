@@ -102,12 +102,3 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# functions
-
-sub() {
-    # Search for both files and directories under $HOME
-    local target
-    target=$(find "$HOME" \( -type f -o -type d \) 2>/dev/null | fzf)
-    # If something is selected, open it with Sublime Text (using "command subl" to bypass any alias)
-    [ -n "$target" ] && command subl "$target"
-}
