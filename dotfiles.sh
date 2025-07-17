@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-# 1) install gnu 
+# 1) install gnu
 if ! command -v stow &>/dev/null; then
   echo "→ Installing GNU Stow…"
   if [[ "$(uname)" == "Darwin" ]]; then
@@ -17,7 +17,7 @@ cd "$SCRIPT_DIR/dotfiles"
 
 # 3) add packages (configfiles you want to stow) here
 
-packages=(kitty zsh vim)
+packages=(kitty zsh vim nvim)
 
 for pkg in "${packages[@]}"; do
   echo "→ Stowing $pkg"
@@ -25,6 +25,3 @@ for pkg in "${packages[@]}"; do
 done
 
 echo "🧪 Magic done!"
-
-
-
