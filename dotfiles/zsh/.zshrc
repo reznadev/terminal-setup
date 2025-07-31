@@ -14,7 +14,6 @@ function y() {
   rm -f -- "$tmp"
 }
 
-export EDITOR=code
 
 # Dotfiles root
 export DOTFILES="$HOME/github/terminal-setup/dotfiles"
@@ -96,9 +95,17 @@ alias pubip="curl -s http://checkip.dyndns.org/ | sed 's/[a-zA-Z<>/ :]//g'"
 alias myip="ifconfig en0 | grep inet | grep -v inet6 | awk '{print \$2}'"
 
 
+# Load machine-specific overrides (not tracked by Git)
+
+if [ -f "$HOME/.zshrc.local" ]; then
+    source "$HOME/.zshrc.local"
+fi
+
+
 # Not main config
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
