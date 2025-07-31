@@ -17,7 +17,7 @@ cd "$SCRIPT_DIR/dotfiles"
 
 # 3) add packages (configfiles you want to stow) here
 
-packages=(kitty zsh vim nvim)
+packages=(kitty zsh vim tmux)
 
 for pkg in "${packages[@]}"; do
   echo "→ Stowing $pkg"

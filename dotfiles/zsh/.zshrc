@@ -57,9 +57,6 @@ sv() {
   git push && echo "Pushed to Github"
 }
 
-# AWS alias
-
-alias crmidev='AWS_PROFILE=crmi-dev aws'
 
 # Other alias
 
@@ -77,7 +74,6 @@ alias v='vim'
 alias tf='terraform'
 alias c='code'
 alias lsp='lsof -PiTCP -sTCP:LISTEN'
-alias obsidian='cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents'
 
 # Pretty print the PATH
 
