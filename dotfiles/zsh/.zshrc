@@ -75,6 +75,7 @@ alias v='vim'
 alias tf='terraform'
 alias c='code'
 alias lsp='lsof -PiTCP -sTCP:LISTEN'
+alias tx='tmux'
 
 # Pretty print the PATH
 
