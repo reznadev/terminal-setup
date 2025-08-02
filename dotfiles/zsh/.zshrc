@@ -50,12 +50,11 @@ sz() {
 # quickly edit vimrc 
 alias vv='vim $DOTFILES/vim/.vimrc'
 sv() {
-  cd "$DOTFILES" && echo "++++ Changed to dotfiles repo: $DOTFILES ++++"
-  git add vim/.vimrc && echo "++++ Staged vim/.vimrc ++++"
-  git commit -m "Updated vimrc" && echo "++++ Committed changes ++++"
-  git push && echo "++++ Pushed to Github ++++"
+  cd "$DOTFILES" && echo "\033[0;32m++++ Changed to dotfiles repo: $DOTFILES ++++\033[0m"
+  git add vim/.vimrc && echo "\033[0;32m++++ Staged vim/.vimrc ++++\033[0m"
+  git commit -m "Updated vimrc" && echo "\033[0;32m++++ Committed changes ++++\033[0m"
+  git push && echo "\033[0;32m++++ Pushed to Github ++++\033[0m"
 }
-
 
 # Other alias
 
