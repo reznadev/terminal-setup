@@ -40,14 +40,12 @@ alias reload="source ~/.zshrc"
 
 alias vz="vim $DOTFILES/zsh/.zshrc"
 sz() {
-  source ~/.zshrc && echo "++++ /.zshrc sourced ++++"
-  cd "$DOTFILES" && echo "++++ Changed to dotfiles repo: $DOTFILES ++++"
-  git add zsh/.zshrc && echo "++++ Staged zsh/.zshrc ++++"
-  git commit -m "Update zshrc" && echo "++++ Committed changes ++++"
-  git push && echo "++++ Pushed to GitHub ++++"
+  source ~/.zshrc && echo "\033[0;36m++++ ~/.zshrc sourced ++++\033[0m"
+  cd "$DOTFILES" && echo "\033[0;36m++++ Changed to dotfiles repo: $DOTFILES ++++\033[0m"
+  git add zsh/.zshrc && echo "\033[0;36m++++ Staged zsh/.zshrc ++++\033[0m"
+  git commit -m "Update zshrc" && echo "\033[0;36m++++ Committed changes ++++\033[0m"
+  git push && echo "\033[0;36m++++ Pushed to GitHub ++++\033[0m"
 }
-
-
 
 # quickly edit vimrc 
 alias vv='vim $DOTFILES/vim/.vimrc'
