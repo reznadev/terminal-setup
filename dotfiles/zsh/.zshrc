@@ -1,7 +1,5 @@
 source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # use yellow for directories
-# export CLICOLOR=1
-# export LSCOLORS=fxfxcxdxbxegedabagacad
 
 # TUI File Manager
 
