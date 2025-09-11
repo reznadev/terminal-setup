@@ -1,5 +1,8 @@
 source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-# use yellow for directories
+
+# Python Direnv
+
+eval "$(direnv hook zsh)"
 
 # TUI File Manager
 
