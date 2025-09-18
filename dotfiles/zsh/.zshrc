@@ -72,7 +72,8 @@ cd "$DOTFILES" || return
     git commit -m "Update vimrc"
     git push
     echo "\033[0;32m++++ Committed and pushed ++++\033[0m" 
-
+  fi
+}
 # Other alias
 
 alias grep='grep --color'
