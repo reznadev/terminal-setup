@@ -38,21 +38,42 @@ alias reload="source ~/.zshrc"
 
 alias vz="vim $DOTFILES/zsh/.zshrc"
 sz() {
-  source ~/.zshrc && echo "\033[0;32m++++ ~/.zshrc sourced ++++\033[0m"
-  cd "$DOTFILES" && echo "\033[0;32m++++ Changed to dotfiles repo: $DOTFILES ++++\033[0m"
-  git add zsh/.zshrc && echo "\033[0;32m++++ Staged zsh/.zshrc ++++\033[0m"
-  git commit -m "Update zshrc" && echo "\033[0;32m++++ Committed changes ++++\033[0m"
-  git push && echo "\033[0;32m++++ Pushed to GitHub ++++\033[0m"
-}
+    cd "$DOTFILES" || return
+  echo "\033[0;32m++++ Changed to dotfiles repo: $DOTFILES ++++\033[0m"
+
+  git pull --rebase || { echo "\033[0;31mPull failed! Resolve conflicts first.\033[0m"; return 1; }
+
+  if git diff --quiet && git diff --cached --quiet; then
+    echo "\033[0;33mNo changes to commit.\033[0m"
+  else
+    git add zsh/.zshrc
+    git commit -m "Update zshrc"
+    git push
+    echo "\033[0;32m++++ Committed and pushed ++++\033[0m"
+  fi
+
+  source ~/.zshrc
+  echo "\033[0;32m++++ ~/.zshrc sourced ++++\033[0m"
+
+  }
 
 # quickly edit vimrc 
 alias vv='vim $DOTFILES/vim/.vimrc'
 sv() {
-  cd "$DOTFILES" && echo "\033[0;32m++++ Changed to dotfiles repo: $DOTFILES ++++\033[0m"
-  git add vim/.vimrc && echo "\033[0;32m++++ Staged vim/.vimrc ++++\033[0m"
-  git commit -m "Updated vimrc" && echo "\033[0;32m++++ Committed changes ++++\033[0m"
-  git push && echo "\033[0;32m++++ Pushed to Github ++++\033[0m"
-}
+cd "$DOTFILES" || return
+  echo "\033[0;32m++++ Changed to dotfiles repo: $DOTFILES ++++\033[0m"
+
+  git pull --rebase || { echo "\033[0;31mPull failed! Resolve conflicts first.\033[0m"; return 1; }
+
+  if git diff --quiet && git diff --cached --quiet; then
+    echo "\033[0;33mNo changes to commit.\033[0m"
+  else
+    git add vim/.vimrc
+    git commit -m "Update vimrc"
+    git push
+    echo "\033[0;32m++++ Committed and pushed ++++\033[0m"
+  
+ } 
 
 # Other alias
 
