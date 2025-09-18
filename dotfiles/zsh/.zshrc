@@ -71,7 +71,7 @@ cd "$DOTFILES" || return
     git add vim/.vimrc
     git commit -m "Update vimrc"
     git push
-    echo "\033[0;32m++++ Committed and pushed ++++\033[0m"} 
+    echo "\033[0;32m++++ Committed and pushed ++++\033[0m" 
 
 # Other alias
 
