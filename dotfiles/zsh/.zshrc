@@ -42,28 +42,26 @@ alias stowr='st -R'
 # quickly edit and source .zshrc
 
 alias reload="source ~/.zshrc"
-
 alias vz="vim $DOTFILES/zsh/.zshrc"
+
 sz() {
     cd "$DOTFILES" || return
     echo "\033[0;32m++++ Changed to dotfiles repo: $DOTFILES ++++\033[0m"
 
-    # Check if we have unstaged changes
+    # Check for unstaged changes
     if ! git diff --quiet; then
         echo "\033[0;33mStashing unstaged changes...\033[0m"
         git stash push -u -m "Auto-stash before sync"
         local stashed=true
     fi
 
-    # Now pull cleanly
     git pull --rebase || { echo "\033[0;31mPull failed! Resolve conflicts first.\033[0m"; return 1; }
 
-    # Restore stashed changes if we had any
+    # Restore stashed changes
     if [[ $stashed == true ]]; then
         git stash pop
     fi
 
-    # Now commit if there are changes
     if ! git diff --quiet || ! git diff --cached --quiet; then
         git add zsh/.zshrc
         git commit -m "Update zshrc"
@@ -78,6 +76,7 @@ sz() {
 # quickly edit vimrc 
 
 alias vv='vim $DOTFILES/vim/.vimrc'
+
 sv() {
 cd "$DOTFILES" || return
   echo "\033[0;32m++++ Changed to dotfiles repo: $DOTFILES ++++\033[0m"
