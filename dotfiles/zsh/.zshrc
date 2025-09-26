@@ -1,7 +1,7 @@
 # Tmux autostart 
 
-if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
-    exec tmux new-session -A -s ${USER} >/dev/null 2>&1
+if [ -x "$(command -v tmux)" ] && [ -z "${TMUX}" ]; then
+    exec tmux new-session -A -s ${USER}
 fi
 
 # Brew autocomplete
