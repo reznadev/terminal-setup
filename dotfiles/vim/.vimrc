@@ -1,3 +1,13 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'justinmk/vim-sneak'
+
+call plug#end()
+
+" Sneak vim
+let g:sneak#label = 1
+
+" Vim basic
 set nocompatible
 set backspace=indent,eol,start
 set showcmd

@@ -1,2 +1,4 @@
 .DS_Store
 .zshrc.local
+.vim/autoload/plug.vim
+.vim/plugged/
