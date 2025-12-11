@@ -29,4 +29,5 @@ let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 nnoremap H 0
 nnoremap L $
+nnoremap <C-l> :nohlsearch<CR>
 
