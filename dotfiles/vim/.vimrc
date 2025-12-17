@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'justinmk/vim-sneak'
+Plug 'wellle/targets.vim'
 
 call plug#end()
 
