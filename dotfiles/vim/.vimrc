@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'justinmk/vim-sneak'
 Plug 'wellle/targets.vim'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -31,4 +32,5 @@ let &t_EI = "\e[2 q"
 nnoremap H 0
 nnoremap L $
 nnoremap <C-l> :nohlsearch<CR>
-
+nnoremap <leader>w :wq<CR>
+nnoremap <leader>q :q<CR>

@@ -4,9 +4,6 @@ if [ -x "$(command -v tmux)" ] && [ -z "${TMUX}" ]; then
     exec tmux new-session -A -s ${USER}
 fi
 
-# Brew autocomplete
-source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-
 # TUI File Manager
 
 function y() {
@@ -146,6 +143,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # auto-suggestions plugin
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Brew autocomplete
+source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
 
 # Created by `pipx` on 2025-09-11 15:02:20
 export PATH="$PATH:/Users/rezana/.local/bin"
