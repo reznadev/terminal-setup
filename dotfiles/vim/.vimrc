@@ -34,3 +34,4 @@ nnoremap L $
 nnoremap <C-l> :nohlsearch<CR>
 nnoremap <leader>w :wq<CR>
 nnoremap <leader>q :q<CR>
+nnoremap <leader>t :terminal<CR>
