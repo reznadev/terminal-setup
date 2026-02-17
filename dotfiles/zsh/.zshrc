@@ -93,22 +93,7 @@ git pull --rebase || { echo "\033[0;31mPull failed! Resolve conflicts first.\033
      fi
  }
 
-# sv() {
 
-# cd "$DOTFILES" || return
-#   echo "\033[0;32m++++ Changed to dotfiles repo: $DOTFILES ++++\033[0m"
-
-#   git pull --rebase || { echo "\033[0;31mPull failed! Resolve conflicts first.\033[0m"; return 1; }
-
-#   if git diff --quiet && git diff --cached --quiet; then
-#     echo "\033[0;33mNo changes to commit.\033[0m"
-#   else
-#     git add vim/.vimrc
-#     git commit -m "Update vimrc"
-#     git push
-#     echo "\033[0;32m++++ Committed and pushed ++++\033[0m" 
-#   fi
-# }
 # Other alias
 
 alias grep='grep --color'
