@@ -37,10 +37,9 @@ alias stowr='st -R'
 
 
 # quickly edit and source .zshrc
-
 alias rz="source ~/.zshrc"
-alias vz="vim $DOTFILES/zsh/.zshrc"
 
+alias vz="vim $DOTFILES/zsh/.zshrc"
 sz() {
     cd "$DOTFILES" || return
     echo "\033[0;32m++++ Changed to dotfiles repo: $DOTFILES ++++\033[0m"
@@ -71,24 +70,45 @@ sz() {
 }
 
 # quickly edit vimrc 
-
 alias vv='vim $DOTFILES/vim/.vimrc'
-
 sv() {
-cd "$DOTFILES" || return
-  echo "\033[0;32m++++ Changed to dotfiles repo: $DOTFILES ++++\033[0m"
+    cd "$DOTFILES" || return
+    echo "\033[0;32m++++ Changed to dotfiles repo: $DOTFILES ++++\033[0m"
+    if ! git diff --quiet; then
+    echo "\033[0;33mStashing unstaged changes...\033[0m"
+    git stash push -u -m "Auto-stash before sync"
+         local stashed=true
+     fi
 
-  git pull --rebase || { echo "\033[0;31mPull failed! Resolve conflicts first.\033[0m"; return 1; }
+git pull --rebase || { echo "\033[0;31mPull failed! Resolve conflicts first.\033[0m"; return 1; }
+   if [[ $stashed == true ]]; then
+         git stash pop
+   fi
 
-  if git diff --quiet && git diff --cached --quiet; then
-    echo "\033[0;33mNo changes to commit.\033[0m"
-  else
-    git add vim/.vimrc
-    git commit -m "Update vimrc"
-    git push
-    echo "\033[0;32m++++ Committed and pushed ++++\033[0m" 
-  fi
-}
+    if ! git diff --quiet || ! git diff --cached --quiet; then
+         git add vim/.vimrc
+   git commit -m "Update vimrc"
+      git push
+        echo "\033[0;32m++++ Committed and pushed ++++\033[0m"
+     fi
+ }
+
+# sv() {
+
+# cd "$DOTFILES" || return
+#   echo "\033[0;32m++++ Changed to dotfiles repo: $DOTFILES ++++\033[0m"
+
+#   git pull --rebase || { echo "\033[0;31mPull failed! Resolve conflicts first.\033[0m"; return 1; }
+
+#   if git diff --quiet && git diff --cached --quiet; then
+#     echo "\033[0;33mNo changes to commit.\033[0m"
+#   else
+#     git add vim/.vimrc
+#     git commit -m "Update vimrc"
+#     git push
+#     echo "\033[0;32m++++ Committed and pushed ++++\033[0m" 
+#   fi
+# }
 # Other alias
 
 alias grep='grep --color'
