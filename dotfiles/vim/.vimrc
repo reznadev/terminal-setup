@@ -1,3 +1,4 @@
+" Plugin Manager 
 call plug#begin('~/.vim/plugged')
 
 Plug 'justinmk/vim-sneak'
