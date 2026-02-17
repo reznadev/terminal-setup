@@ -142,7 +142,7 @@ export PATH="$PATH:/Users/rezana/.local/bin"
 export PATH=/Users/musint/.opencode/bin:$PATH
 
 # brew auto suggest
-source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # fixes broken double tab
 autoload -Uz compinit && compinit
