@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-eunuch'
 Plug 'wellle/targets.vim'
 Plug 'tpope/vim-commentary'
 
