@@ -135,18 +135,20 @@ if [ -f "$HOME/.zshrc.local" ]; then
 fi
 
 
-# Not main config
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# auto-suggestions plugin
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Brew autocomplete
-source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-
-
 # Created by `pipx` on 2025-09-11 15:02:20
 export PATH="$PATH:/Users/rezana/.local/bin"
+
+# opencode
+export PATH=/Users/musint/.opencode/bin:$PATH
+
+# fixes broken double tab
+unsetopt auto_menu
+#
+#
+# Not main config
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
