@@ -38,7 +38,7 @@ alias stowr='st -R'
 
 # quickly edit and source .zshrc
 
-alias reload="source ~/.zshrc"
+alias rz="source ~/.zshrc"
 alias vz="vim $DOTFILES/zsh/.zshrc"
 
 sz() {
