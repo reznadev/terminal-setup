@@ -149,6 +149,12 @@ export PATH=/Users/musint/.opencode/bin:$PATH
 # brew auto suggest
 # source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# moving
+bindkey '^G' delete-char
+bindkey '^W' forward-word
+bindkey '^B' backward-word
+
+
 # fixes broken double tab
 autoload -Uz compinit && compinit
 unsetopt auto_menu
