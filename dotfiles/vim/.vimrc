@@ -33,7 +33,7 @@ let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 nnoremap H 0
 nnoremap L $
-nnoremap <C-l> :nohlsearch<CR>
+nnoremap <leader>l :nohlsearch<CR>
 nnoremap <leader>w :wq<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>t :terminal<CR>
