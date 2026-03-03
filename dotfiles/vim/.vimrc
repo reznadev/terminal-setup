@@ -38,3 +38,7 @@ nnoremap <leader>l :nohlsearch<CR>
 nnoremap <leader>w :wq<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>t :terminal<CR>
+
+" terraform specific 
+let g:terraform_fmt_on_save = 1
+filetype plugin indent on
