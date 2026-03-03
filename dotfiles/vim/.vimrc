@@ -5,6 +5,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-eunuch'
 Plug 'wellle/targets.vim'
 Plug 'tpope/vim-commentary'
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
