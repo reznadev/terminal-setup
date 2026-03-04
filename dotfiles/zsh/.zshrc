@@ -111,7 +111,6 @@ alias tf='terraform'
 alias c='code'
 alias lsp='lsof -PiTCP -sTCP:LISTEN'
 alias tx='tmux'
-alias cc='clear'
 # Pretty print the PATH
 
 alias path='echo; tr ":" "\n" <<< "$PATH"; echo;'
@@ -167,3 +166,5 @@ unsetopt auto_menu
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
+
+. "$HOME/.local/bin/env"
