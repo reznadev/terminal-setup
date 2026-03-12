@@ -140,12 +140,6 @@ if [ -f "$HOME/.zshrc.local" ]; then
 fi
 
 
-# Created by `pipx` on 2025-09-11 15:02:20
-export PATH="$PATH:/Users/rezana/.local/bin"
-
-# opencode
-export PATH=/Users/musint/.opencode/bin:$PATH
-
 # brew auto suggest
 # source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -158,14 +152,4 @@ bindkey '^B' backward-word
 # fixes broken double tab
 autoload -Uz compinit && compinit
 unsetopt auto_menu
-#
-#
-# Not main config
 
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-
-. "$HOME/.local/bin/env"
