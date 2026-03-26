@@ -153,3 +153,4 @@ bindkey '^B' backward-word
 autoload -Uz compinit && compinit
 unsetopt auto_menu
 
+export PATH="$HOME/.local/bin:$PATH"
