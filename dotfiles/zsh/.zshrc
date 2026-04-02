@@ -112,6 +112,7 @@ alias tf='terraform'
 alias c='code'
 alias lsp='lsof -PiTCP -sTCP:LISTEN'
 alias tx='tmux'
+alias cat='bat'
 # Pretty print the PATH
 
 alias path='echo; tr ":" "\n" <<< "$PATH"; echo;'
