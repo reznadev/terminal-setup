@@ -37,5 +37,6 @@
       "Bash(git push -f*)",
       "Bash(sudo *)"
     ]
-  }
+  },
+  "model": "opus"
 }
