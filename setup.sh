@@ -22,10 +22,15 @@ fi
 echo " 🐋 Installing packages from Brewfile"
 brew bundle --file="$SCRIPT_DIR/Brewfile"
 
-# Ensure stow is available before stowing dotfiles
-brew install stow 2>/dev/null || true
+# Install vim-plug
+if [[ ! -f ~/.vim/autoload/plug.vim ]]; then
+  echo " 🔌 Installing vim-plug…"
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  vim +PlugInstall +qall
+fi
 
 # Stow dotfiles
 echo " 🦩 Stowing dotfiles…"
-"$SCRIPT_DIR/dotfiles-init.sh"
+source "$SCRIPT_DIR/dotfiles-init.sh"
 
