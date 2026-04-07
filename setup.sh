@@ -22,6 +22,9 @@ fi
 echo " 🐋 Installing packages from Brewfile"
 brew bundle --file="$SCRIPT_DIR/Brewfile"
 
+# Ensure stow is available before stowing dotfiles
+brew install stow 2>/dev/null || true
+
 # Stow dotfiles
 echo " 🦩 Stowing dotfiles…"
 "$SCRIPT_DIR/dotfiles-init.sh"
