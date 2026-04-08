@@ -1,5 +1,6 @@
 brew "eza"
 brew "git"
+brew "bat"
 brew "stow"
 brew "vim"
 brew "yazi"
