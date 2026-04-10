@@ -67,14 +67,23 @@ alias path='echo; tr ":" "\n" <<< "$PATH"; echo;'
 # GIT
 # ───────────────────────────────────────────────
 
-alias ga='git add .'
+alias ga='git add -A'
+alias gaa='git add .'
 alias gc='git commit -m'
-alias gs='git status'
+alias gca='git commit -am'
+alias gs='git status -sb'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gl='git log --oneline --graph --decorate -15'
 alias gsw='git switch'
-alias gb='git branch'
-alias gf='git fetch'
+alias gb='git branch -vv'
+alias gf='git fetch --prune'
 alias gps='git push'
-alias gpl='git pull'
+alias gpl='git pull --rebase'
+alias gst='git stash'
+alias gstp='git stash pop'
+alias grb='git rebase'
+alias gm='git merge --no-ff'
 
 
 # ───────────────────────────────────────────────
