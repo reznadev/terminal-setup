@@ -31,18 +31,22 @@ sdot() {
   local file="$1"
   cd "$DOTFILES" || return
   echo "\033[0;32m++++ Changed to dotfiles repo: $DOTFILES ++++\033[0m"
-  if ! git diff --quiet; then
-    echo "\033[0;33mStashing unstaged changes...\033[0m"
+  if ! git diff --quiet -- "$file" || ! git diff --cached --quiet -- "$file"; then
+    echo "\033[0;33mStashing all changes before pull...\033[0m"
     git stash push -u -m "Auto-stash before sync"
     local stashed=true
   fi
   git pull --rebase || { echo "\033[0;31mPull failed! Resolve conflicts first.\033[0m"; return 1; }
-  [[ $stashed == true ]] && git stash pop
-  if ! git diff --quiet || ! git diff --cached --quiet; then
+  if [[ $stashed == true ]]; then
+    git stash pop || { echo "\033[0;31mStash pop failed! Resolve conflicts manually.\033[0m"; return 1; }
+  fi
+  if ! git diff --quiet -- "$file" || ! git diff --cached --quiet -- "$file"; then
     git add "$file"
     git commit -m "Update $(basename $file)"
     git push
     echo "\033[0;32m++++ Committed and pushed ++++\033[0m"
+  else
+    echo "\033[0;33mNo changes to $file — nothing to commit.\033[0m"
   fi
   source ~/.zshrc
   echo "\033[0;32m++++ ~/.zshrc sourced ++++\033[0m"
