@@ -1,0 +1,16 @@
+[opener]
+edit = [
+	{ run = 'vim "$@"', block = true, for = "unix" },
+]
+
+[preview]
+# Use Kitty's native image protocol for the best performance
+image_filter = "lanczos3"
+max_width = 1500
+max_height = 1500
+
+[plugin]
+# This ensures Yazi uses Kitty's protocol
+preload = [
+	{ mime = "image/*", run = "image" }
+]

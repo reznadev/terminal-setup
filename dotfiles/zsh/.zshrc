@@ -1,9 +1,21 @@
 # ───────────────────────────────────────────────
-# TMUX AUTOSTART
+# TMUX FUZZY AUTOSTART
 # ───────────────────────────────────────────────
 
-if [ -x "$(command -v tmux)" ] && [ -z "${TMUX}" ]; then
-    exec tmux new-session -A -s ${USER}
+if [ -z "$TMUX" ] && [ -n "$PS1" ] && [ -z "$SKIP_TMUX" ]; then
+    # Get existing sessions
+    sessions=$(tmux list-sessions -F "#{session_name}" 2>/dev/null)
+    
+    # Create the picker list (existing sessions + a "NEW" option)
+    selection=$(echo -e "${sessions}\n[ NEW SESSION ]" | fzf --reverse --header="── TMUX SESSIONS ──" --height=20%)
+
+    if [[ "$selection" == "[ NEW SESSION ]" ]]; then
+        read "sname?Enter session name: "
+        tmux new-session -s "$sname"
+    elif [[ -n "$selection" ]]; then
+        tmux attach-session -t "$selection"
+    fi
+    # If selection is empty (Esc/Ctrl-C), it just continues to plain Zsh
 fi
 
 # ───────────────────────────────────────────────
@@ -107,7 +119,6 @@ alias v='vim'
 alias tf='terraform'
 alias c='code'
 alias tx='tmux'
-alias cat='bat'
 
 
 # ───────────────────────────────────────────────
@@ -158,6 +169,22 @@ export PATH="$HOME/.local/bin:$PATH"
 # ZOXIDE
 # ───────────────────────────────────────────────
 eval "$(zoxide init zsh)"
+
+# ───────────────────────────────────────────────
+# PLUGINS & INTEGRATIONS
+# ───────────────────────────────────────────────
+
+# FZF Integration (Ctrl-R, Ctrl-T, Alt-C)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
+
+# FZF Previews using 'bat'
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :500 {}'"
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --color='header:italic:underline'"
+
+# Plugins (Brew installed)
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ───────────────────────────────────────────────
 # OVERRIDE

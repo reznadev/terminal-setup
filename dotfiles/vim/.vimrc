@@ -36,7 +36,7 @@ nnoremap H 0
 nnoremap L $
 nnoremap <leader>l :nohlsearch<CR>
 nnoremap <leader>w :wq<CR>
-nnoremap <leader>q :q<CR>
+nnoremap <leader>q :q!<CR>
 nnoremap <leader>t :terminal<CR>
 
 " terraform specific 
