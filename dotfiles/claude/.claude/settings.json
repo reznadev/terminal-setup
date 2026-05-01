@@ -105,6 +105,7 @@
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
   },
-  "effortLevel": "high",
-  "skipAutoPermissionPrompt": true
+  "effortLevel": "medium",
+  "skipAutoPermissionPrompt": true,
+  "model": "sonnet"
 }
