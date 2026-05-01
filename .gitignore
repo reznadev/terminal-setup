@@ -2,3 +2,16 @@
 .zshrc.local
 .vim/autoload/plug.vim
 .vim/plugged/
+
+# Claude runtime/personal data
+dotfiles/claude/.claude/backups/
+dotfiles/claude/.claude/cache/
+dotfiles/claude/.claude/history.jsonl
+dotfiles/claude/.claude/mcp-needs-auth-cache.json
+dotfiles/claude/.claude/paste-cache/
+dotfiles/claude/.claude/plans/
+dotfiles/claude/.claude/plugins/known_marketplaces.json
+dotfiles/claude/.claude/plugins/marketplaces/
+dotfiles/claude/.claude/projects/
+dotfiles/claude/.claude/sessions/
+dotfiles/claude/.claude/shell-snapshots/
