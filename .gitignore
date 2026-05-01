@@ -14,4 +14,7 @@ dotfiles/claude/.claude/plugins/known_marketplaces.json
 dotfiles/claude/.claude/plugins/marketplaces/
 dotfiles/claude/.claude/projects/
 dotfiles/claude/.claude/sessions/
+dotfiles/claude/.claude/sessions-env/
 dotfiles/claude/.claude/shell-snapshots/
+dotfiles/claude/.claude/backups/
+
