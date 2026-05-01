@@ -3,9 +3,9 @@
 .vim/autoload/plug.vim
 .vim/plugged/
 
-# Claude runtime/personal data
 dotfiles/claude/.claude/backups/
 dotfiles/claude/.claude/cache/
+dotfiles/claude/.claude/file-history/
 dotfiles/claude/.claude/history.jsonl
 dotfiles/claude/.claude/mcp-needs-auth-cache.json
 dotfiles/claude/.claude/paste-cache/
