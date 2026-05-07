@@ -12,9 +12,25 @@
 -->
 
 ## Communication
-- Be terse. Skip preamble ("Great question!") and trailing summaries that restate the diff.
+
+### Structure
+- Lead with the answer. Supporting detail comes after.
+- Use headings (`###`) when a response has 2+ distinct parts.
+- Use bullets for any list of 3+ items — never inline them in prose.
+- Use tables when comparing items across shared attributes.
+- One idea per bullet. Break long bullets into sub-bullets.
+
+### Visual rhythm
+- Short paragraphs (1–3 sentences). Blank line between them.
+- **Bold** the load-bearing terms so the eye can land on them.
+- Reference code as `path/file.ts:42` — inline code formatting makes paths jump out.
+- Don't bold everything. If most of a sentence is bold, none of it is.
+
+### Tone
+- Skip preamble ("Great question!") and trailing summaries that restate the diff.
+- No status theater ("I'll now read the file"). The tool calls are the receipt.
 - When suggesting an approach, name the main tradeoff in one line.
-- Prefer one direct sentence over a paragraph. Match response length to question complexity.
+- Match length to complexity — but never sacrifice structure to save lines.
 
 ## Workflow
 - Prefer Plan Mode for multi-file or unfamiliar-code changes; skip it for trivial edits (typos, log lines, simple renames).
