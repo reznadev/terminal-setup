@@ -1,0 +1,29 @@
+[user]
+	email = reezierez@gmail.com
+	name = rezna
+[init]
+	defaultBranch = main
+[alias]
+	wt = "!f() { git worktree list --porcelain | awk \"/^worktree /{print \\$2}\" | while read d; do cd \"$d\" 2>/dev/null || continue; b=$(git symbolic-ref --short HEAD 2>/dev/null || echo DETACHED); a=$(git rev-list --left-right --count main...HEAD 2>/dev/null); s=$(git status --porcelain | wc -l | tr -d \" \"); printf \"%-50s %-30s ahead/behind:%s dirty:%s\\n\" \"$d\" \"$b\" \"$a\" \"$s\"; done; }; f"
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	dark = true
+	syntax-theme = Nord
+	side-by-side = true
+	line-numbers = true
+	hyperlinks = true
+	file-style = bold "#88c0d0" ul
+	file-decoration-style = "#88c0d0" ol
+	hunk-header-decoration-style = "#81a1c1" box ul
+	minus-style = syntax "#3b1f24"
+	minus-emph-style = syntax bold "#7a2c34"
+	plus-style = syntax "#1f3320"
+	plus-emph-style = syntax bold "#3f6b3f"
+	zero-style = syntax
+	whitespace-error-style = "#bf616a" reverse
+[merge]
+	conflictStyle = zdiff3
