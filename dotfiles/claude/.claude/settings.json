@@ -79,6 +79,7 @@
     ],
     "defaultMode": "acceptEdits"
   },
+  "model": "haiku",
   "hooks": {
     "Notification": [
       {
@@ -105,6 +106,9 @@
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
   },
+<<<<<<< HEAD
   "effortLevel": "medium",
   "skipAutoPermissionPrompt": true
+=======
+>>>>>>> e330c6c (feat: steuerberater agent)
 }
