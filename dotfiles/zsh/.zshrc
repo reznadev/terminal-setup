@@ -166,6 +166,12 @@ unsetopt auto_menu
 export PATH="$HOME/.local/bin:$PATH"
 
 # ───────────────────────────────────────────────
+# EDITOR
+# ───────────────────────────────────────────────
+export EDITOR=vim
+export VISUAL=vim
+
+# ───────────────────────────────────────────────
 # ZOXIDE
 # ───────────────────────────────────────────────
 eval "$(zoxide init zsh)"

@@ -79,7 +79,6 @@
     ],
     "defaultMode": "acceptEdits"
   },
-  "model": "haiku",
   "hooks": {
     "Notification": [
       {
