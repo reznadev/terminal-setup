@@ -1,7 +1,33 @@
 [opener]
 edit = [
-	{ run = 'vim "$@"', block = true, for = "unix" },
+	{ run = 'vim %s', desc = "Vim", block = true, for = "unix" },
 ]
+
+[open]
+prepend_rules = [
+	{ mime = "text/*", use = "edit" },
+	{ mime = "inode/empty", use = "edit" },
+
+	# common code/config files that may not be detected as text/*
+	{ url = "*.md", use = "edit" },
+	{ url = "*.txt", use = "edit" },
+	{ url = "*.toml", use = "edit" },
+	{ url = "*.json", use = "edit" },
+	{ url = "*.js", use = "edit" },
+	{ url = "*.ts", use = "edit" },
+	{ url = "*.jsx", use = "edit" },
+	{ url = "*.tsx", use = "edit" },
+	{ url = "*.lua", use = "edit" },
+	{ url = "*.sh", use = "edit" },
+	{ url = "*.zsh", use = "edit" },
+	{ url = "*.py", use = "edit" },
+	{ url = "*.rs", use = "edit" },
+	{ url = "*.html", use = "edit" },
+	{ url = "*.css", use = "edit" },
+	{ url = "*.yml", use = "edit" },
+	{ url = "*.yaml", use = "edit" },
+]
+
 
 [preview]
 # Use Kitty's native image protocol for the best performance
