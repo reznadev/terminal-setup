@@ -107,5 +107,7 @@
   },
   "effortLevel": "medium",
   "skipAutoPermissionPrompt": true,
-  "model": "sonnet"
+  "model": "sonnet",
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true
 }
