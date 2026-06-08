@@ -106,8 +106,7 @@
     "command": "bash ~/.claude/statusline-command.sh"
   },
   "effortLevel": "medium",
-  "skipAutoPermissionPrompt": true,
-  "model": "sonnet",
   "inputNeededNotifEnabled": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true
 }
