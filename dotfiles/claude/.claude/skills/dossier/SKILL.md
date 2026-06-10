@@ -143,6 +143,33 @@ Append a clearly-fenced block **after** the dossier body (or as section 9 notes)
 
 ---
 
+## Step 6 — Render to HTML (for the juniors)
+
+The markdown dossier stays canonical; the HTML is a **derived, regenerable render** so the
+junior reading it sees a clean one-pager instead of raw markdown tables. Render it by
+default at the end of every dossier run.
+
+- **Generate from** the shared scaffold `_html/base.html` (the same one the vault `/render`
+  skill uses) — keep deliverables visually consistent.
+- **Save as** `dossier.html` next to the markdown: `…/Accounts/{slug}/dossier.html`. Same
+  colocation pattern as Excalidraw and the render skill.
+- **Self-contained single file:** inline CSS, no external dependencies, mobile-readable.
+  Works both opened directly as a file and in a sandboxed embed.
+- **Carry the frontmatter** (company, status, trigger heat, ICP verdict, created/last_updated)
+  into a visible header for provenance. Stamp the **`Internal`** sensitivity label prominently —
+  this is open-source research, not customer-environment data.
+- **Surface the principal-owned bits clearly:** visually flag the draft first-touch as
+  "⚠️ PRINCIPAL MUST REWRITE", and render §7 (Deal state) / §10 (References) as the empty,
+  principal-owned template — never hide them.
+- **Highlight the flags** a junior must act on (disqualifiers, `unbekannt` buyer, unconfirmed
+  Microsoft stack, data conflicts) so they're scannable, not buried in a table.
+- **Markdown is the master.** Do not hand-edit `dossier.html`. When the markdown changes
+  materially (refresh, new interaction-log rows, status change), **regenerate** the HTML —
+  treat it as build output, like the Excalidraw `.svg`.
+- Report the HTML path alongside the markdown path in Step 5.
+
+---
+
 ## Notes
 
 - **Default depth = medium**: enough searches to nail the trigger + buyer + pillar, not an
