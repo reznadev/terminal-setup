@@ -22,6 +22,13 @@ fi
 # DOTFILES
 # ───────────────────────────────────────────────
 export DOTFILES="$HOME/github/terminal-setup/dotfiles"
+export CONTAINERS="$HOME/github/terminal-setup/containers/services"
+alias cs='cd $CONTAINERS'
+cup() {
+  local selected=$(ls $CONTAINERS | fzf --prompt="service> ")
+  [[ -z "$selected" ]] && return 0
+  docker compose -f "$CONTAINERS/$selected/compose.yaml" up -d
+}
 
 # ───────────────────────────────────────────────
 # STOW 

@@ -17,4 +17,8 @@ dotfiles/claude/.claude/sessions/
 dotfiles/claude/.claude/sessions-env/
 dotfiles/claude/.claude/shell-snapshots/
 dotfiles/claude/.claude/backups/
+dotfiles/claude/.claude/.last-cleanup
+dotfiles/claude/.claude/.last-update-result.json
+dotfiles/claude/.claude/uploads/
+dotfiles/claude/.claude/image-cache/
 
