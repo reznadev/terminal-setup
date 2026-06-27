@@ -3,6 +3,7 @@
 .vim/autoload/plug.vim
 .vim/plugged/
 
+dotfiles/claude/.claude/.telegram-creds
 dotfiles/claude/.claude/backups/
 dotfiles/claude/.claude/cache/
 dotfiles/claude/.claude/file-history/
@@ -21,4 +22,5 @@ dotfiles/claude/.claude/.last-cleanup
 dotfiles/claude/.claude/.last-update-result.json
 dotfiles/claude/.claude/uploads/
 dotfiles/claude/.claude/image-cache/
+dotfiles/claude/.claude/telemetry/
 

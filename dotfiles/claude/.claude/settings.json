@@ -86,7 +86,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "afplay /System/Library/Sounds/Ping.aiff"
+            "command": "afplay /System/Library/PrivateFrameworks/ToneLibrary.framework/Versions/A/Resources/AlertTones/Modern/Note.m4r"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/notify-telegram.sh '🔐 Claude wartet auf deine Freigabe'"
           }
         ]
       },
@@ -95,7 +99,46 @@
         "hooks": [
           {
             "type": "command",
-            "command": "afplay /System/Library/Sounds/Ping.aiff"
+            "command": "afplay /System/Library/PrivateFrameworks/ToneLibrary.framework/Versions/A/Resources/AlertTones/Modern/Note.m4r"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/notify-telegram.sh '⏳ Claude ist fertig und wartet auf dich'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/PrivateFrameworks/ToneLibrary.framework/Versions/A/Resources/AlertTones/Modern/Note.m4r"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/notify-telegram.sh '✅ Claude hat den Task abgeschlossen'"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/load-last-journal.sh"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/save-session-stub.sh"
           }
         ]
       }
@@ -108,5 +151,6 @@
   "effortLevel": "medium",
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "tui": "fullscreen"
 }
