@@ -111,7 +111,7 @@
           },
           {
             "type": "command",
-            "command": "~/.claude/hooks/tmux-flag.sh mark 💤"
+            "command": "~/.claude/hooks/tmux-flag.sh mark 🥱"
           }
         ]
       }
