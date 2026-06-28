@@ -91,6 +91,10 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/notify-telegram.sh '🔐 Claude wartet auf deine Freigabe'"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/tmux-flag.sh mark 🔐"
           }
         ]
       },
@@ -104,6 +108,10 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/notify-telegram.sh '⏳ Claude ist fertig und wartet auf dich'"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/tmux-flag.sh mark 💤"
           }
         ]
       }
@@ -118,6 +126,30 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/notify-telegram.sh '✅ Claude hat den Task abgeschlossen'"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/tmux-flag.sh clear"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/tmux-flag.sh clear"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/tmux-flag.sh clear"
           }
         ]
       }
@@ -129,6 +161,10 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/load-last-journal.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/tmux-flag.sh clear"
           }
         ]
       }
@@ -139,6 +175,10 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/save-session-stub.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/tmux-flag.sh clear"
           }
         ]
       }
