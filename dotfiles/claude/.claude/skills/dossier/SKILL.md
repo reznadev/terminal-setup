@@ -52,7 +52,7 @@ All Bitpol paths below are under `Domains/Work/BITPOL/`.
 
 Before any deep research, run the 30-second qualifier from `ICP-Personas.md`:
 
-> **DACH · 200–2000 FTE · Microsoft-first · AND ≥1 live trigger**
+> **DACH · 30–2000 FTE · Microsoft-first · AND ≥1 live trigger**
 > (NIS-2 deadline / Defender cutover / Entra incident / ISO·DORA·TISAX push).
 
 One or two quick searches to establish geography, size, and stack signal. Then verdict:
@@ -95,7 +95,7 @@ Copy the structure from `06_Templates/Account-Dossier.md` exactly. Fill from res
 3. **Stack signal** — Microsoft-tenant likelihood, license tier guess **labelled as inference with its evidence** (job ads, MX, email domains). Mark likelihood High/Med/Low. Public-only.
 4. **People map** — IT-Leiter/CISO (champion), CFO (approver), DPO (gatekeeper), procurement. Names + titles + LinkedIn **only where verifiable**; otherwise `unbekannt`. Tag the primary contact's persona (Markus / Sabine / Dr. Berger).
 5. **Compliance posture** — NIS-2 in/out of scope + reasoning, sector classification, visible frameworks (ISO/TISAX/DORA/BSI/KRITIS) with evidence, audit cycle if known.
-6. **Pillar fit** — which of Pillar 1 (Detection & Response) / 2 (Identity & Access) / 3 (Governance & Compliance), with reasoning. **Check disqualifiers**: non-Microsoft stack, size mismatch (<200 / >2000), sector mismatch (defense/gambling/crypto), already engaged with Big-4/SI, no identifiable buyer. Any disqualifier → flag for principal before proceeding.
+6. **Pillar fit** — which of Pillar 1 (Detection & Response) / 2 (Identity & Access) / 3 (Governance & Compliance), with reasoning. **Check disqualifiers**: non-Microsoft stack, size mismatch (<30 / >2000), sector mismatch (defense/gambling/crypto), already engaged with Big-4/SI, no identifiable buyer. Any disqualifier → flag for principal before proceeding.
 
 Frontmatter: `status: researched`, `created` + `last_updated` = today (in context),
 `owner_principal: yes`. **Leave Sections 7 and 10 as the empty template.**

@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # SessionStart hook: when opening Claude inside the Symbiose vault,
-# inject the most recent cc-journal entry into context so you see where you left off.
+# inject the most recent SUBSTANTIVE cc-journal entries (up to 3) so you
+# see where you left off. Stub-only days (auto-session-stub comments with
+# no real content) are skipped but counted, so missing summaries stay visible.
 # stdout from a SessionStart hook is added to the session context.
 
 set -euo pipefail
@@ -21,9 +23,36 @@ esac
 jdir="$vault/03_cc-journal/Journal"
 [ -d "$jdir" ] || exit 0
 
-last="$(ls -1 "$jdir"/*.md 2>/dev/null | sort | tail -1 || true)"
-[ -n "$last" ] || exit 0
+# Substantive = at least one non-blank line outside HTML comments.
+is_substantive() {
+  awk '
+    /<!--/ { inc = 1 }
+    inc == 0 && NF > 0 { found = 1; exit }
+    /-->/ { inc = 0 }
+    END { exit !found }
+  ' "$1"
+}
 
-echo "# Letzte Claude-Session — $(basename "$last" .md)"
-echo
-cat "$last"
+shown=0
+skipped=0
+for f in $(ls -1 "$jdir"/*.md 2>/dev/null | sort -r); do
+  if is_substantive "$f"; then
+    if [ "$shown" -eq 0 ]; then
+      echo "# Letzte Claude-Sessions (Journal)"
+    fi
+    echo
+    echo "## $(basename "$f" .md)"
+    echo
+    cat "$f"
+    shown=$((shown + 1))
+    [ "$shown" -ge 3 ] && break
+  else
+    skipped=$((skipped + 1))
+  fi
+done
+
+# Unjournaled days are a capture failure — keep them visible every session.
+if [ "$skipped" -gt 0 ]; then
+  echo
+  echo "⚠️ $skipped Session-Tag(e) ohne Journal-Zusammenfassung (nur Auto-Stubs). Biete an, sie aus den Transcript-Pfaden nachzutragen (nur lokale Pfade dieses Rechners)."
+fi

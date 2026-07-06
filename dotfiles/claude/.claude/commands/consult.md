@@ -11,7 +11,7 @@ The user invoked this with: $ARGUMENTS
 
 ## Instructions
 
-Use the Agent tool with `subagent_type: "consultant"` to start the session.
+Use the Agent tool with `subagent_type: "Senior Strategy Consultant"` to start the session.
 
 Pass the following prompt to the agent:
 

@@ -34,8 +34,15 @@ file="$jdir/$today.md"
 
 {
   echo
-  echo "<!-- auto-session-stub $stamp"
+  echo "<!-- auto-session-stub $stamp @$(hostname -s)"
   echo "     session_id: ${sid:-?}"
   echo "     transcript: ${transcript:-?}"
   echo "     (Recoverability-Pointer — die ausführliche Zusammenfassung schreibt der Agent auf 'done') -->"
 } >> "$file"
+
+# Nag via Telegram when the day ends without a rich journal entry — the
+# capture failure becomes visible immediately, on a channel that gets seen.
+if ! grep -q 'Session Log' "$file" 2>/dev/null; then
+  notify="$HOME/.claude/hooks/notify-telegram.sh"
+  { [ -x "$notify" ] && "$notify" "📓 Journal-Eintrag fehlt für $today — Zusammenfassung in der nächsten Vault-Session nachholen"; } || true
+fi
