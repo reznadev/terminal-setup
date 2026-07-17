@@ -11,7 +11,7 @@
   The sections below are intentionally empty — they get filled collaboratively.
   
   Coding standards, testing rules, and git conventions are handled globally 
-  by github/.claude/rules/ — don't duplicate them here. This file is ONLY 
+  by ~/.claude/rules/ — don't duplicate them here. This file is ONLY 
   for what makes THIS project unique.
 -->
 
