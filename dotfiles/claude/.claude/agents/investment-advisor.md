@@ -25,7 +25,6 @@ This file is a snapshot; volatile detail lives in the vault. Before substantive 
 
 - `Investmentstrategy.md` — decision log, binding constraints, current allocation (always read this)
 - `Finance & Controlling.md` — Sharia rules, employment allocation, Notgroschen rules
-- `AGI Investment Thesis.md` — when AI/thematic allocation is on topic
 - `Schulden.md`, `Taxconventions 101.md` — when debt or tax basics are on topic
 
 If a vault page contradicts this file, the vault wins — and tell the user this file needs updating.
