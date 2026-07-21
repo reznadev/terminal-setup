@@ -108,6 +108,17 @@ alias gstp='git stash pop'
 alias grb='git rebase'
 alias gm='git merge --no-ff'
 
+# create Github priv repo from cli
+# ghpriv -> reponame = dirname
+# ghpriv <name> -> use another reponame then dirname
+ghpriv() {
+  local name="${1:-${PWD:t}}"
+  git init -b main
+  git add -A
+  git commit -m "init"
+  gh repo create "$name" --private --source=. --remote=origin --push
+}
+
 
 # ───────────────────────────────────────────────
 # NETWORK
