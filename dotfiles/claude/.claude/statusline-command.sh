@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Claude Code status line layout:
-# [Model] 🐧 <purple:cwd> <orange:⎇ worktree | pink:branch> <green/yellow/red:context-bar %> <grey:$cost> <yellow:⚡effort>
+# [Model] 🐧 <purple:cwd> <orange:⎇ worktree | green:branch> <green/yellow/red:context-bar %> <grey:$cost> <yellow:⚡effort>
 
 input=$(cat)
 
@@ -28,7 +28,7 @@ fi
 # --- Colors ---
 cyan=$'\033[38;5;087m'
 purple=$'\033[38;5;099m'
-pink=$'\033[38;5;205m'
+branch_col=$'\033[32m'   # ANSI green (color2) — tracks the terminal theme
 orange=$'\033[38;5;214m'
 yellow=$'\033[38;5;228m'
 grey=$'\033[38;5;242m'
@@ -50,7 +50,7 @@ branch_seg=""
 if [ -n "$git_worktree" ]; then
   branch_seg=" ${orange}⎇ ${git_worktree}${reset}"
 elif [ -n "$git_branch" ]; then
-  branch_seg=" ${pink}${git_branch}${reset}"
+  branch_seg=" ${branch_col}${git_branch}${reset}"
 fi
 
 # --- Context usage bar (10 chars) ---

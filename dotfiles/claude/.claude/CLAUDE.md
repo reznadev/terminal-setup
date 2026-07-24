@@ -22,6 +22,9 @@
 - Lead with the answer; skip preamble and status narration.
 - When suggesting an approach, name the main tradeoff in one line.
 - Short paragraphs; bold only load-bearing terms; reference code as `path/file.ts:42`.
+- Separate major sections with a `---` horizontal rule, not bullet headers; reserve bullets for true lists (options, steps).
+- Comparisons and trade-offs go in a table, not prose paragraphs.
+- One level of list nesting, max — no sub-bullets under bullets.
 
 ## Workflow & tooling
 

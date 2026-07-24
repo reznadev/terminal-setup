@@ -161,7 +161,7 @@ autoload -Uz vcs_info
 precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '%b '
 setopt PROMPT_SUBST
-PROMPT='🐧 %F{099}%~ %F{205}${vcs_info_msg_0_}%f%k%F{228}★%f '
+PROMPT='🐧 %F{099}%~ %F{2}${vcs_info_msg_0_}%f%k%F{228}★%f '
 
 # ───────────────────────────────────────────────
 # KEYBINDINGS

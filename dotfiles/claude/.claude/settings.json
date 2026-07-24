@@ -114,6 +114,7 @@
     ],
     "defaultMode": "acceptEdits"
   },
+  "model": "sonnet",
   "hooks": {
     "PreToolUse": [
       {
@@ -235,9 +236,15 @@
     "command": "bash ~/.claude/statusline-command.sh"
   },
   "effortLevel": "xhigh",
-  "tui": "fullscreen",
+  "tui": "default",
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
   "skipWorkflowUsageWarning": true,
+  "theme": "dark",
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": true
 }

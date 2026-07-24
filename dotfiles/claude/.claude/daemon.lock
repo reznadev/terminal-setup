@@ -1,0 +1,16 @@
+{
+  "pid": 99765,
+  "version": "2.1.218",
+  "jsonPath": "/Users/rezna/.claude/daemon.json",
+  "logPath": "/Users/rezna/.claude/daemon.log",
+  "startedAt": 1784893433087,
+  "origin": "transient",
+  "spawnedBy": {
+    "label": "claude",
+    "cwd": "/Users/rezna/github/terminal-setup/dotfiles/kitty/.config/kitty",
+    "pid": 78928
+  },
+  "procStart": "Fri Jul 24 11:43:52 2026",
+  "launchTarget": "/Users/rezna/.local/share/claude/versions/2.1.218",
+  "processWrapper": ""
+}
